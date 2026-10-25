@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ */
+/* Design tokens                                                       */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  --color-ink-950: #0f100e;
+  --color-ink-900: #141512;
+  --color-ink-850: #191a17;
+  --color-ink-800: #20211d;
+  --color-line: #2a2b26;
+  --color-line-strong: #3b3c35;
+  --color-paper: #ece7dc;
+  --color-paper-dim: #c4bfb3;
+  --color-muted: #8f8b81;
+  --color-lime: #d4f54a;
+  --color-lime-dim: #9fb83a;
+
+  --font-display: var(--font-newsreader), "Times New Roman", serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --text-mono-xs: 0.6875rem;
+  --text-mono-xs--line-height: 1rem;
+  --text-mono-xs--letter-spacing: 0.08em;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "kern";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ------------------------------------------------------------------ */
+/* Components                                                          */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  /* Page frame: fine column rules behind the content. */
+  .frame-rules {
+    background-image: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--color-line) 55%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: calc(100% / 4) 100%;
+  }
+  @media (min-width: 1024px) {
+    .frame-rules {
+      background-size: calc(100% / 12) 100%;
+    }
+  }
+
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-xs);
+    line-height: var(--text-mono-xs--line-height);
+    letter-spacing: var(--text-mono-xs--letter-spacing);
+    text-transform: uppercase;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease-out-quart);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+}
+
+/* ------------------------------------------------------------------ */
+/* Pipeline signals                                                    */
+/* ------------------------------------------------------------------ */
+
+.signal {
+  stroke-dasharray: 3 37;
+  animation: signal-flow 2.4s linear infinite;
+}
+.signal--fast {
+  animation-duration: 1.2s;
+}
+.signal-vertical {
+  animation: signal-drop 4s linear infinite;
+}
+
+@keyframes signal-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes signal-drop {
+  from {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    top: calc(100% - 0.75rem);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal,
+  .signal-vertical {
+    animation: none !important;
+    opacity: 0;
+  }
 }
