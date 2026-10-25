@@ -85,10 +85,6 @@ export function Contact() {
                 <span className="block text-sm text-muted">{person.locationNote}</span>
               </dd>
             </div>
-            <div className="bg-ink-900 p-5">
-              <dt className="mono-label text-muted">Languages</dt>
-              <dd className="mt-2 text-paper">{person.languages.map((l) => l.name).join(", ")}</dd>
-            </div>
           </dl>
         </div>
       </Container>

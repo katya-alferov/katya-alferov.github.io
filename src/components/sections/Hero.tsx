@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDownToLine, ArrowRight, MapPin } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { cvFiles, hero, person } from "@/content/profile";
 import { asset } from "@/lib/paths";
 import { Container } from "@/components/ui/Container";
@@ -65,6 +65,19 @@ export function Hero() {
                 Word<span className="sr-only"> version of the CV</span>
               </a>
             </p>
+            {person.linkedin && (
+              <p className="mono-label flex items-center gap-2">
+                <ArrowUpRight aria-hidden="true" className="size-3.5 text-muted" />
+                <a
+                  href={person.linkedin}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  className="link-underline text-paper-dim hover:text-lime"
+                >
+                  LinkedIn<span className="sr-only"> profile (opens in a new tab)</span>
+                </a>
+              </p>
+            )}
           </div>
 
           <div

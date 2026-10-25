@@ -46,12 +46,8 @@ export const person = {
   /** Displayed as written on the CV. */
   phoneDisplay: "(054) 520-6797",
   phoneHref: "tel:+972545206797",
-  /**
-   * No LinkedIn URL appears on the CV, so it is not shown.
-   * Paste the verified profile URL here to add a LinkedIn link to the
-   * contact section and footer automatically.
-   */
-  linkedin: null as string | null,
+  /** Shown in the hero, contact section and footer; set to null to hide. */
+  linkedin: "https://www.linkedin.com/in/katya-alferov-4a4ab3133/" as string | null,
   languages: [
     { name: "Hebrew", level: "Native" },
     { name: "English", level: "Fluent" },
@@ -225,12 +221,12 @@ export const story = {
   paragraphs: [
     "I work where data systems meet the business. On the billing team at Partner, I build and maintain the ETL processes, database objects and reports that billing data depends on — from the specification, through testing and release, to supporting it in production.",
     "Before that, at Isracard, I developed ETL processes with Informatica in a data warehouse environment, worked across Teradata, Oracle and SQL Server, and was part of the shift-based support for Informatica and Control-M failures.",
-    "Earlier, I taught Java and Python at ProGeeks, and spent several years in digital marketing analytics: tracking KPIs, designing A/B tests and reporting on what the numbers meant. I studied Computer Science & Business Administration, and Psychology, at The Open University.",
+    "Earlier, I taught Java and Python at ProGeeks, ran my own swimwear brand, Dream Bikinis, and spent several years in digital marketing analytics: tracking KPIs, designing A/B tests and reporting on what the numbers meant. I studied Computer Science & Business Administration, and Psychology, at The Open University.",
   ],
   threads: [
     { label: "Systems", text: "Computer Science degree; ETL development across Informatica, Control-M and three database platforms." },
     { label: "Data", text: "Complex SQL, stored procedures, tuning, validation and data analysis." },
-    { label: "Business", text: "Business Administration degree; billing data; earlier marketing management and KPI reporting." },
+    { label: "Business", text: "Business Administration degree; billing data; founding and running Dream Bikinis; marketing management and KPI reporting." },
     { label: "Communication", text: "Teaching programming; translating technical knowledge for non-technical leadership." },
   ],
 };
@@ -384,6 +380,13 @@ export type EarlierRole = {
 };
 
 export const earlierRoles: EarlierRole[] = [
+  {
+    title: "Founder & Owner",
+    company: "Dream Bikinis",
+    range: "2017 — 2021",
+    summary:
+      "Founded and ran Dream Bikinis, a successful independent swimwear brand, as a self-employed business owner.",
+  },
   {
     title: "Marketing Manager",
     company: "upper.il",

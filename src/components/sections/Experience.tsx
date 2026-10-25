@@ -94,13 +94,13 @@ function EarlierWork() {
     <div className="grid grid-cols-12 gap-x-6 gap-y-8 border-t border-line pt-10 lg:pt-14">
       <div className="col-span-12 lg:col-span-3">
         <p className="mono-label text-paper-dim">2016 — 2021</p>
-        <h3 className="mt-3 font-display text-3xl leading-tight text-paper">Earlier: marketing analytics</h3>
+        <h3 className="mt-3 font-display text-3xl leading-tight text-paper">Earlier: business &amp; marketing</h3>
         <p className="mt-3 max-w-[34ch] text-[0.925rem] leading-relaxed text-muted">
-          Before moving into data development: analysis, reporting and coordination on the business side.
+          Before moving into data development: running my own business, plus analysis, reporting and coordination on the marketing side.
         </p>
       </div>
       <div className="col-span-12 lg:col-span-9">
-        <ul className="grid gap-px border border-line bg-line sm:grid-cols-3">
+        <ul className="grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
           {earlierRoles.map((r) => (
             <li key={r.title} className="bg-ink-950 p-5">
               <p className="mono-label text-muted">{r.range}</p>
