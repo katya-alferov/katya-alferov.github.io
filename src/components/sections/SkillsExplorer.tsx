@@ -35,7 +35,7 @@ export function SkillsExplorer() {
                 onClick={() => setFilter(f)}
                 className={`mono-label min-h-10 border px-3 transition-colors ${
                   active
-                    ? "border-lime bg-lime text-ink-950"
+                    ? "border-accent bg-accent text-on-accent"
                     : "border-line-strong text-paper-dim hover:border-paper hover:text-paper"
                 }`}
               >
@@ -46,7 +46,7 @@ export function SkillsExplorer() {
         </div>
         <div className="mono-label flex flex-wrap items-center gap-x-5 gap-y-2 text-muted">
           <span className="flex items-center gap-2">
-            <span aria-hidden="true" className="inline-block size-2.5 bg-lime" /> Used in a professional role
+            <span aria-hidden="true" className="inline-block size-2.5 bg-accent" /> Used in a professional role
           </span>
           <span className="flex items-center gap-2">
             <span aria-hidden="true" className="inline-block size-2.5 border border-paper-dim" /> Coursework or CV toolkit
@@ -91,7 +91,7 @@ export function SkillsExplorer() {
                         <span
                           aria-hidden="true"
                           className={`inline-block size-2 shrink-0 translate-y-[-1px] ${
-                            pro ? "bg-lime" : "border border-paper-dim"
+                            pro ? "bg-accent" : "border border-paper-dim"
                           }`}
                         />
                         {skill.name}

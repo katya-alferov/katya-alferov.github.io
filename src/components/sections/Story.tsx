@@ -28,7 +28,7 @@ export function Story() {
             <ol className="mt-4 border-t border-line">
               {story.threads.map((t, i) => (
                 <li key={t.label} className="grid grid-cols-[3rem_1fr] gap-x-3 border-b border-line py-4">
-                  <span className="mono-label pt-1 text-lime">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="mono-label pt-1 text-accent-ink">{String(i + 1).padStart(2, "0")}</span>
                   <span>
                     <span className="block font-display text-xl text-paper">{t.label}</span>
                     <span className="mt-1 block text-[0.925rem] leading-relaxed text-muted">{t.text}</span>

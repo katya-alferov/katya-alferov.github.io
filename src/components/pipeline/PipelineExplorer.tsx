@@ -86,7 +86,7 @@ export function PipelineExplorer() {
                   <span
                     className={`mono-label whitespace-nowrap transition-colors ${
                       stage.id === "orchestration" ? "" : "text-center"
-                    } ${isSelected ? "text-lime" : "text-muted group-hover:text-paper"}`}
+                    } ${isSelected ? "text-accent-ink" : "text-muted group-hover:text-paper"}`}
                   >
                     {stage.index !== "∞" ? `${stage.index} · ` : ""}
                     {stage.short}
@@ -115,7 +115,7 @@ export function PipelineExplorer() {
               className="col-span-12 grid grid-cols-12 gap-x-6 gap-y-5"
             >
               <div className="col-span-4 lg:col-span-3">
-                <p className="mono-label text-lime">
+                <p className="mono-label text-accent-ink">
                   {selected.id === "orchestration" ? "Layer · spans stages 02–05" : `Stage ${selected.index} / 06`}
                 </p>
                 <p className="mt-2 font-display text-[1.75rem] leading-[1.1] tracking-[-0.01em] text-paper">

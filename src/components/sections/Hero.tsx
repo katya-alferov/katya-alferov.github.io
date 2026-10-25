@@ -10,7 +10,7 @@ export function Hero() {
     <section id="top" aria-labelledby="hero-title" className="relative pt-24 pb-16 sm:pt-28 lg:pb-20">
       <Container>
         <p className="mono-label flex flex-wrap items-center gap-x-3 gap-y-1 text-paper-dim">
-          <span aria-hidden="true" className="inline-block size-2 bg-lime" />
+          <span aria-hidden="true" className="inline-block size-2 bg-accent" />
           {hero.eyebrow.map((item, i) => (
             <span key={item} className="flex items-center gap-3">
               {item}
@@ -32,7 +32,7 @@ export function Hero() {
           </span>{" "}
           <span className="inline-block italic sm:block sm:pl-[12%] lg:pl-[24%]">
             {hero.headline.accent.replace(/\.$/, "")}
-            <span className="text-lime not-italic">.</span>
+            <span className="text-accent-ink not-italic">.</span>
           </span>
         </h1>
 
@@ -57,11 +57,11 @@ export function Hero() {
             </p>
             <p className="mono-label flex items-center gap-2">
               <ArrowDownToLine aria-hidden="true" className="size-3.5 text-muted" />
-              <a href={cvFiles.pdf.href} download className="link-underline text-paper-dim hover:text-lime">
+              <a href={cvFiles.pdf.href} download className="link-underline text-paper-dim hover:text-accent-ink">
                 Download CV <span className="text-muted">(PDF)</span>
               </a>
               <span aria-hidden="true" className="text-line-strong">/</span>
-              <a href={cvFiles.docx.href} download className="link-underline text-paper-dim hover:text-lime">
+              <a href={cvFiles.docx.href} download className="link-underline text-paper-dim hover:text-accent-ink">
                 Word<span className="sr-only"> version of the CV</span>
               </a>
             </p>
@@ -72,7 +72,7 @@ export function Hero() {
                   href={person.linkedin}
                   target="_blank"
                   rel="me noopener noreferrer"
-                  className="link-underline text-paper-dim hover:text-lime"
+                  className="link-underline text-paper-dim hover:text-accent-ink"
                 >
                   LinkedIn<span className="sr-only"> profile (opens in a new tab)</span>
                 </a>
@@ -87,7 +87,7 @@ export function Hero() {
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
                 href={hero.primaryCta.href}
-                className="group inline-flex min-h-12 items-center gap-3 bg-lime px-5 text-[0.95rem] font-medium text-ink-950 transition-colors hover:bg-paper active:translate-y-px"
+                className="group inline-flex min-h-12 items-center gap-3 bg-accent px-5 text-[0.95rem] font-medium text-on-accent transition-colors hover:bg-paper active:translate-y-px"
               >
                 {hero.primaryCta.label}
                 <ArrowRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-0.5" />
@@ -108,7 +108,7 @@ export function Hero() {
             className="mono-label mb-5 flex flex-wrap items-baseline justify-between gap-2 border-t border-line pt-4 text-muted"
           >
             <span>
-              <span className="text-lime">Fig. 01</span> — How data moves through an enterprise system
+              <span className="text-accent-ink">Fig. 01</span> — How data moves through an enterprise system
             </span>
             <span className="hidden md:inline">Select a stage</span>
           </figcaption>

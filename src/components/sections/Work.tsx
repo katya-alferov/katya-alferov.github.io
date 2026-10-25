@@ -16,7 +16,7 @@ export function Work() {
         <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-6 lg:mt-20">
           <div className="col-span-12 lg:col-span-3">
             <h3 className="mono-label text-paper-dim">
-              <span className="text-lime">A</span> — Professional highlights
+              <span className="text-accent-ink">A</span> — Professional highlights
             </h3>
             <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted">
               The kinds of systems and responsibilities from my roles, described without confidential company
@@ -39,7 +39,7 @@ export function Work() {
         <div className="mt-20 grid grid-cols-12 gap-x-6 gap-y-6 lg:mt-28">
           <div className="col-span-12 lg:col-span-3">
             <h3 className="mono-label text-paper-dim">
-              <span className="text-lime">B</span> — Project index
+              <span className="text-accent-ink">B</span> — Project index
             </h3>
             <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted">
               Personal projects, published with source and a short write-up.

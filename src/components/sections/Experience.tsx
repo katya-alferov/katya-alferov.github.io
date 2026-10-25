@@ -40,7 +40,7 @@ function RoleEntry({ role, current }: { role: Role; current: boolean }) {
       <div className="col-span-12 lg:col-span-3">
         <div className="lg:sticky lg:top-24">
           <p className="mono-label flex items-center gap-2 text-paper-dim">
-            {current && <span aria-hidden="true" className="inline-block size-1.5 bg-lime" />}
+            {current && <span aria-hidden="true" className="inline-block size-1.5 bg-accent" />}
             <span>
               <span className="sr-only">Dates: </span>
               {role.start} — {role.end}
@@ -66,7 +66,7 @@ function RoleEntry({ role, current }: { role: Role; current: boolean }) {
           <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
             {role.groups.map((group) => (
               <div key={group.label}>
-                <h4 className="mono-label border-b border-line pb-2 text-lime">{group.label}</h4>
+                <h4 className="mono-label border-b border-line pb-2 text-accent-ink">{group.label}</h4>
                 <ul className="mt-3 space-y-2.5">
                   {group.items.map((item) => (
                     <li key={item} className="relative pl-5 text-[0.975rem] leading-relaxed text-paper-dim">

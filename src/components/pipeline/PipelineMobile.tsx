@@ -18,7 +18,7 @@ export function PipelineMobile({ items }: { items: PipelineStage[] }) {
         {/* the line data travels along */}
         <span aria-hidden="true" className="absolute top-3 bottom-3 left-[7px] w-px bg-line-strong" />
         <span aria-hidden="true" className="absolute top-3 bottom-3 left-[5px] w-[5px]">
-          <span className="signal-vertical absolute left-0 h-3 w-full bg-lime" />
+          <span className="signal-vertical absolute left-0 h-3 w-full bg-accent" />
         </span>
         {stages.map((stage) => (
           <Row
@@ -66,7 +66,7 @@ function Row({
         aria-hidden="true"
         className={`absolute top-[1.15rem] left-0 size-[15px] border transition-colors ${
           layer ? "border-dashed" : ""
-        } ${open ? "border-lime bg-lime/15" : "border-line-strong bg-ink-950"}`}
+        } ${open ? "border-accent bg-accent/15" : "border-line-strong bg-ink-950"}`}
       />
       <button
         type="button"
@@ -76,14 +76,14 @@ function Row({
         className="flex min-h-12 w-full items-center justify-between gap-4 py-3 text-left"
       >
         <span className="flex items-baseline gap-3">
-          <span className={`mono-label ${open ? "text-lime" : "text-muted"}`}>
+          <span className={`mono-label ${open ? "text-accent-ink" : "text-muted"}`}>
             {layer ? "Layer" : stage.index}
           </span>
           <span className="font-display text-xl leading-tight text-paper">{stage.label}</span>
         </span>
         <Plus
           aria-hidden="true"
-          className={`size-4 shrink-0 text-muted transition-transform duration-300 ${open ? "rotate-45 text-lime" : ""}`}
+          className={`size-4 shrink-0 text-muted transition-transform duration-300 ${open ? "rotate-45 text-accent-ink" : ""}`}
         />
       </button>
       <AnimatePresence initial={false}>

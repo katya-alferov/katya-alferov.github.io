@@ -17,7 +17,7 @@ const C = {
   fill: "var(--color-ink-900)",
   paper: "var(--color-paper-dim)",
   muted: "var(--color-muted)",
-  lime: "var(--color-lime)",
+  accent: "var(--color-accent)",
 };
 
 type ShapeProps = { x: number; active: boolean };
@@ -47,7 +47,7 @@ export function PipelineDiagram({ activeId }: { activeId: string }) {
           x2={RAIL.x2}
           y1={RAIL.y}
           y2={RAIL.y}
-          stroke={railActive ? C.lime : C.line}
+          stroke={railActive ? C.accent : C.line}
           strokeWidth={1}
           strokeDasharray="1 5"
           className="transition-[stroke] duration-300"
@@ -61,7 +61,7 @@ export function PipelineDiagram({ activeId }: { activeId: string }) {
                 x2={cx}
                 y1={RAIL.y}
                 y2={NODE_TOP}
-                stroke={railActive ? C.lime : C.faint}
+                stroke={railActive ? C.accent : C.faint}
                 strokeDasharray="1 4"
                 className="transition-[stroke] duration-300"
               />
@@ -70,15 +70,15 @@ export function PipelineDiagram({ activeId }: { activeId: string }) {
                 y={RAIL.y - 2.5}
                 width={5}
                 height={5}
-                fill={railActive ? C.lime : "var(--color-ink-950)"}
-                stroke={railActive ? C.lime : C.line}
+                fill={railActive ? C.accent : "var(--color-ink-950)"}
+                stroke={railActive ? C.accent : C.line}
                 className="transition-[fill,stroke] duration-300"
               />
             </g>
           );
         })}
-        <line x1={RAIL.x1} x2={RAIL.x1} y1={RAIL.y - 5} y2={RAIL.y + 5} stroke={railActive ? C.lime : C.line} />
-        <line x1={RAIL.x2} x2={RAIL.x2} y1={RAIL.y - 5} y2={RAIL.y + 5} stroke={railActive ? C.lime : C.line} />
+        <line x1={RAIL.x1} x2={RAIL.x1} y1={RAIL.y - 5} y2={RAIL.y + 5} stroke={railActive ? C.accent : C.line} />
+        <line x1={RAIL.x2} x2={RAIL.x2} y1={RAIL.y - 5} y2={RAIL.y + 5} stroke={railActive ? C.accent : C.line} />
       </g>
 
       {/* Fan-in from the three source slabs to extraction */}
@@ -118,7 +118,7 @@ export function PipelineDiagram({ activeId }: { activeId: string }) {
             x2={stageX(i) + NODE_W / 2}
             y1={LABEL_BOTTOM + 30}
             y2={LABEL_BOTTOM + 38}
-            stroke={i === activeIndex ? C.lime : C.line}
+            stroke={i === activeIndex ? C.accent : C.line}
           />
         ))}
         <text x={stageX(0)} y={LABEL_BOTTOM + 56}>RAW</text>
@@ -143,11 +143,11 @@ function Connection({
 }) {
   return (
     <g>
-      <path d={d} fill="none" stroke={active ? C.lime : C.line} strokeWidth={1} className="transition-[stroke] duration-300" />
+      <path d={d} fill="none" stroke={active ? C.accent : C.line} strokeWidth={1} className="transition-[stroke] duration-300" />
       <path
         d={d}
         fill="none"
-        stroke={active ? C.lime : C.paper}
+        stroke={active ? C.accent : C.paper}
         strokeWidth={active ? 3 : 2}
         strokeLinecap="square"
         className={`signal ${active ? "signal--fast" : ""}`}
@@ -167,7 +167,7 @@ function ArrowHead({ d, active }: { d: string; active: boolean }) {
     <path
       d={`M ${x - 6} ${y - 4} L ${x} ${y} L ${x - 6} ${y + 4}`}
       fill="none"
-      stroke={active ? C.lime : C.line}
+      stroke={active ? C.accent : C.line}
       className="transition-[stroke] duration-300"
     />
   );
@@ -175,15 +175,15 @@ function ArrowHead({ d, active }: { d: string; active: boolean }) {
 
 function nodeStyle(active: boolean) {
   return {
-    fill: active ? "color-mix(in oklab, var(--color-lime) 9%, var(--color-ink-900))" : C.fill,
-    stroke: active ? C.lime : C.line,
+    fill: active ? "color-mix(in oklab, var(--color-accent) 9%, var(--color-ink-900))" : C.fill,
+    stroke: active ? C.accent : C.line,
     strokeWidth: 1,
     className: "transition-[fill,stroke] duration-300",
   };
 }
 
 function detail(active: boolean) {
-  return { stroke: active ? C.lime : C.muted, strokeWidth: 1, fill: "none", className: "transition-[stroke] duration-300" };
+  return { stroke: active ? C.accent : C.muted, strokeWidth: 1, fill: "none", className: "transition-[stroke] duration-300" };
 }
 
 function Sources({ x, active }: ShapeProps) {
@@ -194,7 +194,7 @@ function Sources({ x, active }: ShapeProps) {
         return (
           <g key={t}>
             <rect x={x} y={y} width={NODE_W} height={26} {...nodeStyle(active)} />
-            <text x={x + 10} y={y + 17} fontSize={10} letterSpacing="0.08em" fill={active ? C.lime : C.muted}>
+            <text x={x + 10} y={y + 17} fontSize={10} letterSpacing="0.08em" fill={active ? C.accent : C.muted}>
               {t}
             </text>
             <line x1={x + NODE_W - 30} x2={x + NODE_W - 10} y1={y + 13} y2={y + 13} {...detail(active)} />
@@ -267,7 +267,7 @@ function Warehouse({ x, active }: ShapeProps) {
       {Array.from({ length: rows - 1 }, (_, k) => (
         <line key={`r${k}`} x1={x} x2={x + NODE_W} y1={y + ((k + 1) * NODE_H) / rows} y2={y + ((k + 1) * NODE_H) / rows} {...detail(active)} strokeOpacity={0.6} />
       ))}
-      <rect x={x + NODE_W / cols} y={y + NODE_H / rows} width={NODE_W / cols} height={NODE_H / rows} fill={active ? C.lime : C.muted} opacity={active ? 0.8 : 0.35} className="transition-[fill,opacity] duration-300" />
+      <rect x={x + NODE_W / cols} y={y + NODE_H / rows} width={NODE_W / cols} height={NODE_H / rows} fill={active ? C.accent : C.muted} opacity={active ? 0.8 : 0.35} className="transition-[fill,opacity] duration-300" />
     </g>
   );
 }
@@ -287,7 +287,7 @@ function Insights({ x, active }: ShapeProps) {
           width={10}
           height={h}
           {...detail(active)}
-          fill={k === bars.length - 1 && active ? C.lime : "none"}
+          fill={k === bars.length - 1 && active ? C.accent : "none"}
         />
       ))}
     </g>

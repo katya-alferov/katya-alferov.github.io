@@ -17,7 +17,7 @@ export function SectionHeader({
   return (
     <header className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-line pt-5">
       <p className="mono-label col-span-12 flex items-center gap-3 self-start text-muted lg:col-span-3 lg:pt-5">
-        <span className="text-lime">{index}</span>
+        <span className="text-accent-ink">{index}</span>
         <span aria-hidden="true" className="h-px w-6 bg-line-strong" />
         {label}
       </p>

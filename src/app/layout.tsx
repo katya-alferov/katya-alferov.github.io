@@ -5,19 +5,19 @@ import { basePath } from "@/lib/paths";
 import "./globals.css";
 
 /* Open-source (OFL) fonts, self-hosted from src/fonts — no external requests. */
-const newsreader = localFont({
-  variable: "--font-newsreader",
+const fraunces = localFont({
+  variable: "--font-fraunces",
   src: [
-    { path: "../fonts/newsreader-latin-opsz-normal.woff2", weight: "200 800", style: "normal" },
-    { path: "../fonts/newsreader-latin-wght-italic.woff2", weight: "200 800", style: "italic" },
+    { path: "../fonts/fraunces-latin-full-normal.woff2", weight: "100 900", style: "normal" },
+    { path: "../fonts/fraunces-latin-wght-italic.woff2", weight: "100 900", style: "italic" },
   ],
   display: "swap",
-  fallback: ["Times New Roman", "serif"],
+  fallback: ["Georgia", "serif"],
 });
 
-const instrumentSans = localFont({
-  variable: "--font-instrument",
-  src: [{ path: "../fonts/instrument-sans-latin-wght-normal.woff2", weight: "400 700", style: "normal" }],
+const dmSans = localFont({
+  variable: "--font-dm-sans",
+  src: [{ path: "../fonts/dm-sans-latin-opsz-normal.woff2", weight: "100 1000", style: "normal" }],
   display: "swap",
   fallback: ["system-ui", "sans-serif"],
 });
@@ -82,20 +82,20 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f100e",
-  colorScheme: "dark",
+  themeColor: "#fbf7ef",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${instrumentSans.variable} ${plexMono.variable} antialiased`}
+      className={`${fraunces.variable} ${dmSans.variable} ${plexMono.variable} antialiased`}
     >
       <body className="min-h-dvh">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-lime focus:px-4 focus:py-2 focus:text-ink-950"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
         >
           Skip to content
         </a>

@@ -51,7 +51,7 @@ export function SiteHeader() {
               <a
                 href={cvFiles.pdf.href}
                 download
-                className="mono-label inline-flex items-center gap-2 border border-line-strong px-3 py-2 text-paper transition-colors hover:border-lime hover:text-lime"
+                className="mono-label inline-flex items-center gap-2 border border-line-strong px-3 py-2 text-paper transition-colors hover:border-accent hover:text-accent-ink"
               >
                 <ArrowDownToLine aria-hidden="true" className="size-3.5" />
                 CV <span className="sr-only">(PDF)</span>
@@ -91,7 +91,7 @@ export function SiteHeader() {
               <a
                 href={cvFiles.pdf.href}
                 download
-                className="mono-label inline-flex items-center gap-2 text-lime"
+                className="mono-label inline-flex items-center gap-2 text-accent-ink"
               >
                 <ArrowDownToLine aria-hidden="true" className="size-3.5" />
                 Download CV (PDF)
@@ -110,7 +110,7 @@ export function Mark() {
     <svg viewBox="0 0 32 32" className="size-8 shrink-0" aria-hidden="true">
       <rect x="0.5" y="0.5" width="31" height="31" fill="none" stroke="var(--color-line-strong)" />
       <path d="M8 7v18M8 16h6l8-9M14 16l8 9" fill="none" stroke="var(--color-paper)" strokeWidth="1.5" />
-      <rect x="12" y="14" width="4" height="4" fill="var(--color-lime)" />
+      <rect x="12" y="14" width="4" height="4" fill="var(--color-accent)" />
     </svg>
   );
 }

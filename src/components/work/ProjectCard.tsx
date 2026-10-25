@@ -5,7 +5,7 @@ import type { Project } from "@/content/profile";
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <li className="grid grid-cols-12 gap-x-6 gap-y-3 border-b border-line py-6">
-      <p className="mono-label col-span-2 text-lime sm:col-span-1">{String(index + 1).padStart(2, "0")}</p>
+      <p className="mono-label col-span-2 text-accent-ink sm:col-span-1">{String(index + 1).padStart(2, "0")}</p>
       <div className="col-span-10 sm:col-span-6">
         <h4 className="font-display text-2xl leading-tight text-paper">{project.title}</h4>
         <p className="mt-2 text-[0.975rem] leading-relaxed text-paper-dim">{project.summary}</p>
@@ -23,7 +23,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           <ul className="mt-3 flex flex-wrap gap-4">
             {project.links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="inline-flex items-center gap-1 text-sm text-lime hover:underline">
+                <a href={l.href} className="inline-flex items-center gap-1 text-sm text-accent-ink hover:underline">
                   {l.label}
                   <ArrowUpRight aria-hidden="true" className="size-3.5" />
                 </a>

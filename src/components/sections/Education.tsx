@@ -64,7 +64,7 @@ export function Education() {
               {courses.map((c) => (
                 <li key={c.name} className="flex items-baseline justify-between gap-6 border-b border-line/70 py-3">
                   <span className="text-[0.975rem] leading-snug text-paper">{c.name}</span>
-                  <span className="font-mono text-sm text-lime tabular-nums">
+                  <span className="font-mono text-sm text-accent-ink tabular-nums">
                     <span className="sr-only">Grade </span>
                     {c.grade}
                   </span>

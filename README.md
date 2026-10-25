@@ -127,7 +127,7 @@ bandwidth a month) that a portfolio stays far below; there is no billing.
 | Tailwind CSS 4 | styling | MIT, free |
 | Motion for React | small UI transitions (LazyMotion, `domAnimation`) | MIT, free |
 | Lucide React | icons | ISC, free |
-| Newsreader, Instrument Sans, IBM Plex Mono | fonts, self-hosted in `src/fonts` | SIL OFL 1.1, free (licence included) |
+| Fraunces, DM Sans, IBM Plex Mono | fonts, self-hosted in `src/fonts` | SIL OFL 1.1, free (licence included) |
 | LibreOffice | local DOCX → PDF conversion | MPL-2.0, free |
 | Playwright / Chromium, Lighthouse | local testing only, not shipped | Apache-2.0, free |
 | Images and graphics | hand-written SVG and CSS; share image and app icon are PNGs generated in code | no assets bought |

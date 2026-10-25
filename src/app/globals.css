@@ -5,20 +5,25 @@
 /* ------------------------------------------------------------------ */
 
 @theme {
-  --color-ink-950: #0f100e;
-  --color-ink-900: #141512;
-  --color-ink-850: #191a17;
-  --color-ink-800: #20211d;
-  --color-line: #2a2b26;
-  --color-line-strong: #3b3c35;
-  --color-paper: #ece7dc;
-  --color-paper-dim: #c4bfb3;
-  --color-muted: #8f8b81;
-  --color-lime: #d4f54a;
-  --color-lime-dim: #9fb83a;
+  /* Surfaces (named ink-* from the first, dark version): page → raised. */
+  --color-ink-950: #fbf7ef;
+  --color-ink-900: #f4eee2;
+  --color-ink-850: #ece4d4;
+  --color-ink-800: #e3d9c6;
+  --color-line: #e3d9c8;
+  --color-line-strong: #c9bca5;
+  /* Text (named paper-*): strongest → quietest. */
+  --color-paper: #1f1d19;
+  --color-paper-dim: #48443c;
+  --color-muted: #6b655a;
+  /* Accent: fills, lines and dots use accent; small text uses accent-ink. */
+  --color-accent: #cc3d1f;
+  --color-accent-dim: #c23a24;
+  --color-accent-ink: #b8361c;
+  --color-on-accent: #fffaf2;
 
-  --font-display: var(--font-newsreader), "Times New Roman", serif;
-  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
   --text-mono-xs: 0.6875rem;
@@ -34,7 +39,7 @@
 
 @layer base {
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
@@ -43,17 +48,16 @@
     background-color: var(--color-ink-950);
     color: var(--color-paper);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "kern";
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: var(--color-lime);
-    color: var(--color-ink-950);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-lime);
+    outline: 2px solid var(--color-accent-ink);
     outline-offset: 3px;
   }
 
@@ -93,6 +97,11 @@
     .frame-rules {
       background-size: calc(100% / 12) 100%;
     }
+  }
+
+  /* Fraunces: softened, slightly playful display shapes. */
+  .font-display {
+    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
 
   .mono-label {

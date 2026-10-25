@@ -111,9 +111,9 @@ export function ConceptDemo() {
                 active ? "bg-ink-850" : "hover:bg-ink-850/60"
               }`}
             >
-              <span className={`mono-label ${active ? "text-lime" : "text-muted"}`}>0{i + 1}</span>
+              <span className={`mono-label ${active ? "text-accent-ink" : "text-muted"}`}>0{i + 1}</span>
               <span className={`text-[0.8rem] sm:text-sm ${active ? "text-paper" : "text-paper-dim"}`}>{s.label}</span>
-              {active && <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-0.5 bg-lime" />}
+              {active && <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-0.5 bg-accent" />}
             </button>
           );
         })}
@@ -134,7 +134,7 @@ export function ConceptDemo() {
               <ul className="mb-4 flex flex-wrap gap-x-5 gap-y-1">
                 {rules.map((r) => (
                   <li key={r.sql} className="font-mono text-xs text-paper-dim">
-                    <span className="text-lime">✓</span> {r.sql}
+                    <span className="text-accent-ink">✓</span> {r.sql}
                   </li>
                 ))}
               </ul>
@@ -176,7 +176,7 @@ export function ConceptDemo() {
                     <th scope="row" className="py-3 text-left font-mono font-normal text-paper">{acc}</th>
                     <td className="py-3 font-mono text-paper tabular-nums">{money(total)}</td>
                     <td className="py-3" aria-hidden="true">
-                      <span className="block h-2 bg-lime" style={{ width: `${(total / max) * 100}%` }} />
+                      <span className="block h-2 bg-accent" style={{ width: `${(total / max) * 100}%` }} />
                     </td>
                   </tr>
                 ))}
@@ -216,9 +216,9 @@ function RowsTable({
           {rows.map(({ row, reason }, i) => (
             <tr key={i} className={`border-t border-line ${reason ? "text-muted" : "text-paper"}`}>
               <td className="py-1.5">{row.invoice}</td>
-              <td className="py-1.5">{row.account ?? <span className="text-lime">NULL</span>}</td>
+              <td className="py-1.5">{row.account ?? <span className="text-accent-ink">NULL</span>}</td>
               <td className="py-1.5">{row.date}</td>
-              {showMonth && <td className="py-1.5 text-lime">{row.month}</td>}
+              {showMonth && <td className="py-1.5 text-accent-ink">{row.month}</td>}
               <td className="py-1.5 text-right tabular-nums">{money(row.amount)}</td>
               {showStatus && (
                 <td className="py-1.5 pl-4 whitespace-nowrap">
@@ -227,7 +227,7 @@ function RowsTable({
                       <span className="text-paper">✕</span> {reason}
                     </span>
                   ) : (
-                    <span className="text-lime">pass</span>
+                    <span className="text-accent-ink">pass</span>
                   )}
                 </td>
               )}
