@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { person, site } from "@/content/profile";
+import { basePath } from "@/lib/paths";
 import "./globals.css";
 
 /* Open-source (OFL) fonts, self-hosted from src/fonts — no external requests. */
@@ -31,11 +32,16 @@ const plexMono = localFont({
   fallback: ["ui-monospace", "monospace"],
 });
 
-/** Set NEXT_PUBLIC_SITE_URL in production so Open Graph URLs are absolute. */
+/**
+ * Set NEXT_PUBLIC_SITE_URL in production so Open Graph URLs are absolute.
+ * Next.js adds the base path to metadata files itself, so only the origin is
+ * used as metadataBase.
+ */
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const homePath = `${basePath}/`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(new URL(siteUrl).origin),
   title: {
     default: site.title,
     template: `%s — ${person.name}`,
@@ -56,12 +62,12 @@ export const metadata: Metadata = {
     "SAP BusinessObjects",
     "Israel",
   ],
-  alternates: { canonical: "/" },
+  alternates: { canonical: homePath },
   openGraph: {
     type: "profile",
     title: site.title,
     description: site.description,
-    url: "/",
+    url: homePath,
     siteName: person.name,
     locale: "en_US",
     firstName: "Katya",

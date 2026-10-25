@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDownToLine, ArrowRight, MapPin } from "lucide-react";
 import { cvFiles, hero, person } from "@/content/profile";
+import { asset } from "@/lib/paths";
 import { Container } from "@/components/ui/Container";
 import { PipelineExplorer } from "@/components/pipeline/PipelineExplorer";
 
@@ -39,7 +40,7 @@ export function Hero() {
           <div className="col-span-12 flex flex-col gap-3 sm:col-span-5 lg:col-span-3">
             {person.portrait && (
               <Image
-                src={person.portrait.src}
+                src={asset(person.portrait.src)}
                 alt={person.portrait.alt}
                 width={240}
                 height={300}

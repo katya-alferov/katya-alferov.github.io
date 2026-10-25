@@ -6,6 +6,8 @@
  * components read from these exports and should not need to change.
  */
 
+import { asset } from "@/lib/paths";
+
 /* ------------------------------------------------------------------ */
 /* Evidence: where a skill or technology shows up on the CV            */
 /* ------------------------------------------------------------------ */
@@ -64,8 +66,8 @@ export const person = {
 };
 
 export const cvFiles = {
-  pdf: { href: "/cv/Katya_Alferov_CV.pdf", label: "PDF" },
-  docx: { href: "/cv/Katya_Alferov_CV.docx", label: "Word" },
+  pdf: { href: asset("/cv/Katya_Alferov_CV.pdf"), label: "PDF" },
+  docx: { href: asset("/cv/Katya_Alferov_CV.docx"), label: "Word" },
 };
 
 /* ------------------------------------------------------------------ */
