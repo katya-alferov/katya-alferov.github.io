@@ -592,7 +592,25 @@ export type Project = {
  *   links: [{ label: "Source on GitHub", href: "https://github.com/…" }],
  * }
  */
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    slug: "petalport",
+    title: "Petalport",
+    year: "2026",
+    summary:
+      "A colourful, offline, single-player virtual-life game for children aged 7–13: dress up, decorate a home, work fun jobs, cook and travel. It runs in iPhone Safari and on desktop, with no ads, chat, accounts or purchases, and nothing leaves the device.",
+    points: [
+      "Installable offline web app (PWA); saves stay on the device",
+      "Original SVG art for every character, outfit and room",
+      "Unit, content and end-to-end tests on iPhone and desktop browsers, built and deployed by CI",
+    ],
+    stack: ["React", "TypeScript", "Vite", "Zustand", "Motion", "Vitest", "Playwright", "GitHub Actions"],
+    links: [
+      { label: "Play", href: "https://katya-alferov.github.io/petal-port/" },
+      { label: "Code on GitHub", href: "https://github.com/katya-alferov/petal-port" },
+    ],
+  },
+];
 
 /* ------------------------------------------------------------------ */
 /* Navigation                                                          */

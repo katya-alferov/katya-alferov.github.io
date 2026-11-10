@@ -23,8 +23,13 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           <ul className="mt-3 flex flex-wrap gap-4">
             {project.links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="inline-flex items-center gap-1 text-sm text-lime hover:underline">
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-lime hover:underline">
                   {l.label}
+                  <span className="sr-only"> (opens in a new tab)</span>
                   <ArrowUpRight aria-hidden="true" className="size-3.5" />
                 </a>
               </li>
