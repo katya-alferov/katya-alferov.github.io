@@ -410,6 +410,9 @@ export const earlierRoles: EarlierRole[] = [
   },
 ];
 
+/** Agencies and companies Katya worked with on the marketing side (from Katya). */
+export const marketingPartners = ["Persons Media", "Webnoise", "SEO Link", "Digitouch", "Razi Interactive"];
+
 export const earlierSkills = [
   "KPI analysis & reporting",
   "Data-informed decisions",

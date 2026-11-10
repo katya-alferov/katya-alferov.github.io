@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ArrowDownToLine, Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cvFiles, navigation, person } from "@/content/profile";
 
 export function SiteHeader() {
@@ -48,6 +49,9 @@ export function SiteHeader() {
               </li>
             ))}
             <li>
+              <ThemeToggle />
+            </li>
+            <li>
               <a
                 href={cvFiles.pdf.href}
                 download
@@ -60,16 +64,19 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex size-11 items-center justify-center border border-line-strong text-paper lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X aria-hidden="true" className="size-5" /> : <Menu aria-hidden="true" className="size-5" />}
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex size-11 items-center justify-center border border-line-strong text-paper"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X aria-hidden="true" className="size-5" /> : <Menu aria-hidden="true" className="size-5" />}
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          </button>
+        </div>
       </div>
 
       {open && (

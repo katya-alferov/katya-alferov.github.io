@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { person, site } from "@/content/profile";
 import { basePath } from "@/lib/paths";
+import { themeScript } from "@/components/ui/ThemeToggle";
 import "./globals.css";
 
 /* Open-source (OFL) fonts, self-hosted from src/fonts — no external requests. */
@@ -83,15 +84,18 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#0f100e",
-  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${newsreader.variable} ${instrumentSans.variable} ${plexMono.variable} antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-dvh">
         <a
           href="#main"

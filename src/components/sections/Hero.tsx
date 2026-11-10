@@ -4,10 +4,17 @@ import { cvFiles, hero, person } from "@/content/profile";
 import { asset } from "@/lib/paths";
 import { Container } from "@/components/ui/Container";
 import { PipelineExplorer } from "@/components/pipeline/PipelineExplorer";
+import { DataField } from "./DataField";
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-title" className="relative pt-24 pb-16 sm:pt-28 lg:pb-20">
+    <section id="top" aria-labelledby="hero-title" className="relative isolate pt-24 pb-16 sm:pt-28 lg:pb-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[30rem] [mask-image:linear-gradient(to_bottom,#000_70%,transparent)] sm:h-[34rem] lg:h-[36rem]"
+      >
+        <DataField />
+      </div>
       <Container>
         <p className="mono-label flex flex-wrap items-center gap-x-3 gap-y-1 text-paper-dim">
           <span aria-hidden="true" className="inline-block size-2 bg-lime" />

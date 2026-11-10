@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
+import { useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import { AnimatePresence, LazyMotion, MotionConfig, domAnimation, m } from "motion/react";
 import {
   evidenceLabels,
@@ -9,6 +9,7 @@ import {
   pipelineStages,
   type PipelineStage,
 } from "@/content/profile";
+import { Pause, Play } from "lucide-react";
 import { PipelineDiagram } from "./PipelineDiagram";
 import { LABEL_BOTTOM, NODE_TOP, NODE_W, RAIL, VIEW_H, VIEW_W, stageX } from "./geometry";
 import { PipelineMobile } from "./PipelineMobile";
@@ -25,6 +26,33 @@ export function PipelineExplorer() {
   const [hoverId, setHoverId] = useState<string | null>(null);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const baseId = useId();
+  const [playing, setPlaying] = useState(false);
+
+  // "Run the pipeline": step through the six stages, then stop on BI.
+  useEffect(() => {
+    if (!playing) return;
+    const ids = pipelineStages.map((s) => s.id);
+    const i = ids.indexOf(selectedId);
+    const timer = window.setTimeout(() => {
+      if (i < 0 || i >= ids.length - 1) setPlaying(false);
+      else setSelectedId(ids[i + 1]);
+    }, 1700);
+    return () => window.clearTimeout(timer);
+  }, [playing, selectedId]);
+
+  function togglePlay() {
+    if (playing) {
+      setPlaying(false);
+      return;
+    }
+    setSelectedId(pipelineStages[0].id);
+    setPlaying(true);
+  }
+
+  function choose(id: string) {
+    setPlaying(false);
+    setSelectedId(id);
+  }
 
   const selected = pipelineItems.find((s) => s.id === selectedId) ?? pipelineItems[0];
   const highlightId = hoverId ?? selectedId;
@@ -39,7 +67,7 @@ export function PipelineExplorer() {
     if (event.key === "End") next = ids.length - 1;
     if (next === null) return;
     event.preventDefault();
-    setSelectedId(ids[next]);
+    choose(ids[next]);
     tabRefs.current[ids[next]]?.focus();
   }
 
@@ -73,7 +101,7 @@ export function PipelineExplorer() {
                   aria-selected={isSelected}
                   aria-controls={panelId}
                   tabIndex={isSelected ? 0 : -1}
-                  onClick={() => setSelectedId(stage.id)}
+                  onClick={() => choose(stage.id)}
                   onKeyDown={onTabKeyDown}
                   onPointerEnter={() => setHoverId(stage.id)}
                   onPointerLeave={() => setHoverId(null)}
@@ -145,9 +173,24 @@ export function PipelineExplorer() {
             </m.div>
           </AnimatePresence>
         </div>
-        <p className="mt-5 max-w-3xl text-sm leading-relaxed text-muted">
-          {pipelineNote} Select a stage, or use the arrow keys to move between them.
-        </p>
+        <div className="mt-5 flex flex-wrap items-start justify-between gap-x-8 gap-y-4">
+          <p className="max-w-3xl text-sm leading-relaxed text-muted">
+            {pipelineNote} Select a stage, or use the arrow keys to move between them.
+          </p>
+          <button
+            type="button"
+            onClick={togglePlay}
+            aria-pressed={playing}
+            className="mono-label inline-flex min-h-10 shrink-0 items-center gap-2 border border-line-strong px-4 text-paper transition-colors hover:border-lime hover:text-lime"
+          >
+            {playing ? (
+              <Pause aria-hidden="true" className="size-3.5" />
+            ) : (
+              <Play aria-hidden="true" className="size-3.5" />
+            )}
+            {playing ? "Pause" : "Run the pipeline"}
+          </button>
+        </div>
       </div>
 
       <div className="md:hidden">

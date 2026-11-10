@@ -1,4 +1,4 @@
-import { earlierRoles, earlierSkills, roles, type Role } from "@/content/profile";
+import { earlierRoles, earlierSkills, marketingPartners, roles, type Role } from "@/content/profile";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { TechList } from "@/components/ui/TechList";
@@ -111,7 +111,11 @@ function EarlierWork() {
           ))}
         </ul>
         <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
-          <p className="mono-label shrink-0 text-muted">Carried forward</p>
+          <p className="mono-label shrink-0 text-muted sm:w-32">Marketing work with</p>
+          <TechList items={marketingPartners} />
+        </div>
+        <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
+          <p className="mono-label shrink-0 text-muted sm:w-32">Carried forward</p>
           <TechList items={earlierSkills} />
         </div>
       </div>

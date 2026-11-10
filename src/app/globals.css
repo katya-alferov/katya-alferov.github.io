@@ -28,6 +28,23 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* Light theme: same token names, so every component follows the switch.
+   Accent is a deep coral here, dark enough for small text on cream. */
+:root[data-theme="light"] {
+  --color-ink-950: #fbf7ef;
+  --color-ink-900: #f4eee2;
+  --color-ink-850: #ece4d4;
+  --color-ink-800: #e3d9c6;
+  --color-line: #e3d9c8;
+  --color-line-strong: #c9bca5;
+  --color-paper: #1f1d19;
+  --color-paper-dim: #48443c;
+  --color-muted: #6b655a;
+  --color-lime: #b8361c;
+  --color-lime-dim: #d4553a;
+  color-scheme: light;
+}
+
 /* ------------------------------------------------------------------ */
 /* Base                                                                */
 /* ------------------------------------------------------------------ */
