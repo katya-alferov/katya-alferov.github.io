@@ -13,12 +13,12 @@ export function Experience() {
           id="experience-title"
           aside={
             <p className="max-w-[60ch] text-[1.0625rem] leading-relaxed text-paper-dim">
-              Enterprise ETL and BI work at Partner and Isracard: from writing the specification, through
-              development and testing, to supporting the process in production.
+              Data engineering at Partner and Isracard, and eight years leading marketing, brand and client
+              projects — two sides of the same skill: turning business needs into results.
             </p>
           }
         >
-          Building data processes — and keeping them running.
+          Building data processes — and growing brands.
         </SectionHeader>
 
         <ol className="mt-14 lg:mt-20">
@@ -93,10 +93,10 @@ function EarlierWork() {
   return (
     <div className="grid grid-cols-12 gap-x-6 gap-y-8 border-t border-line pt-10 lg:pt-14">
       <div className="col-span-12 lg:col-span-3">
-        <p className="mono-label text-paper-dim">2016 — 2021</p>
-        <h3 className="mt-3 font-display text-3xl leading-tight text-paper">Earlier: business &amp; marketing</h3>
+        <p className="mono-label text-paper-dim">2015 — 2021</p>
+        <h3 className="mt-3 font-display text-3xl leading-tight text-paper">Earlier: marketing, content &amp; brand</h3>
         <p className="mt-3 max-w-[34ch] text-[0.925rem] leading-relaxed text-muted">
-          Before moving into data development: running my own business, plus analysis, reporting and coordination on the marketing side.
+          Agency and brand roles where I learned the craft: PPC, SEO, content, websites and e-commerce, and building a brand from zero.
         </p>
       </div>
       <div className="col-span-12 lg:col-span-9">

@@ -1,7 +1,7 @@
 /**
  * All personal content for the site lives in this file.
  *
- * Source of truth: Katya_Alferov_CV_Final_v4.docx (public/cv/).
+ * Source of truth: Katya_Alferov_CV.docx (public/cv/), November 2026 version.
  * Update job titles, dates, technologies, contact details and projects here;
  * components read from these exports and should not need to change.
  */
@@ -18,6 +18,7 @@ export type Evidence =
   | "progeeks"
   | "studies"
   | "marketing"
+  | "project"
   | "toolkit";
 
 export const evidenceLabels: Record<Evidence, { short: string; long: string }> = {
@@ -25,7 +26,8 @@ export const evidenceLabels: Record<Evidence, { short: string; long: string }> =
   isracard: { short: "Isracard", long: "Used in the ETL Developer role at Isracard" },
   progeeks: { short: "ProGeeks", long: "Taught at ProGeeks" },
   studies: { short: "Coursework", long: "Studied at The Open University" },
-  marketing: { short: "Marketing", long: "Used in earlier marketing analytics work" },
+  marketing: { short: "Marketing", long: "Used in marketing, brand and client roles" },
+  project: { short: "Projects", long: "Used in personal projects such as AdPulse" },
   toolkit: { short: "Toolkit", long: "Listed in the CV skills section" },
 };
 
@@ -39,7 +41,7 @@ export const professionalEvidence: Evidence[] = ["partner", "isracard", "progeek
 export const person = {
   name: "Katya Alferov",
   initials: "KA",
-  role: "ETL & BI Developer",
+  role: "ETL, BI & Data Developer | Marketing & Brand Manager",
   location: "Israel",
   locationNote: "Open to relevant opportunities",
   email: "katyaalferov@gmail.com",
@@ -71,10 +73,10 @@ export const cvFiles = {
 /* ------------------------------------------------------------------ */
 
 export const hero = {
-  eyebrow: ["Data Engineering", "ETL", "BI", "Applied AI"],
+  eyebrow: ["ETL & BI", "Data Engineering", "Applied AI", "Marketing & Brand"],
   headline: { lead: "Turning complex data", accent: "into clarity." },
   intro:
-    "Hi, I’m Katya Alferov — a data professional working across ETL development, SQL, BI, and enterprise data systems. I enjoy understanding complex systems, solving problems, and turning technical challenges into reliable solutions.",
+    "Hi, I’m Katya Alferov — an ETL, BI & Data Developer and a Senior Marketing, Brand & Project Manager. At Partner I build ETL processes, BI reporting and AI-driven products; before data, I spent eight years leading digital marketing, brand and client projects. I love the point where data, AI, development and marketing meet.",
   primaryCta: { label: "Explore my work", href: "#experience" },
   secondaryCta: { label: "Get in touch", href: "#contact" },
 };
@@ -109,6 +111,8 @@ export const pipelineStages: PipelineStage[] = [
       { name: "JSON files", evidence: ["isracard"] },
       { name: "XML files", evidence: ["isracard"] },
       { name: "HTTP sources", evidence: ["isracard"] },
+      { name: "APIs", evidence: ["partner"] },
+      { name: "Mainframe (COBOL) files", evidence: ["isracard"] },
       { name: "Relational databases", evidence: ["partner", "isracard"] },
     ],
   },
@@ -186,7 +190,7 @@ export const pipelineStages: PipelineStage[] = [
       "Developing reports and dashboards, and translating technical detail for non-technical leadership and teams.",
     tech: [
       { name: "SAP BusinessObjects", evidence: ["partner"] },
-      { name: "Power BI", evidence: ["partner"] },
+      { name: "Power BI (DAX)", evidence: ["partner"] },
       { name: "Tableau", evidence: ["toolkit"] },
     ],
   },
@@ -219,15 +223,16 @@ export const pipelineNote =
 export const story = {
   heading: "Systems, data, business — and the people in between.",
   paragraphs: [
-    "I work where data systems meet the business. On the billing team at Partner, I build and maintain the ETL processes, database objects and reports that billing data depends on — from the specification, through testing and release, to supporting it in production.",
+    "I work where data systems meet the business. On the billing team at Partner, I build and maintain the ETL processes, database objects, reports and AI-driven initiatives that billing data depends on — from the specification, through QA and release, to supporting it in production.",
     "Before that, at Isracard, I developed ETL processes with Informatica in a data warehouse environment, worked across Teradata, Oracle and SQL Server, and was part of the shift-based support for Informatica and Control-M failures.",
-    "Earlier, I taught Java and Python at ProGeeks, ran my own swimwear brand, Dream Bikinis, and spent several years in digital marketing analytics: tracking KPIs, designing A/B tests and reporting on what the numbers meant. I studied Computer Science & Business Administration, and Psychology, at The Open University.",
+    "Before data, I spent eight years in marketing: as Marketing Manager and Client Account Manager at Upper Group, as a brand and digital marketing consultant for large clients, at agencies such as Social Lady, DigiTouch and Razi Interactive, and as the founder of my own swimwear brand, Dream Bikinis. I led PPC and SEO campaigns, brand strategy and client portfolios in Israel and the USA.",
+    "I also taught Java, Python and web development at ProGeeks, and I hold two B.A. degrees from The Open University: Computer Science & Business Administration, and Psychology.",
   ],
   threads: [
-    { label: "Systems", text: "Computer Science degree; ETL development across Informatica, Control-M and three database platforms." },
-    { label: "Data", text: "Complex SQL, stored procedures, tuning, validation and data analysis." },
-    { label: "Business", text: "Business Administration degree; billing data; founding and running Dream Bikinis; marketing management and KPI reporting." },
-    { label: "Communication", text: "Teaching programming; translating technical knowledge for non-technical leadership." },
+    { label: "Systems", text: "Computer Science degree; ETL development across Informatica, Control-M and three database platforms; streaming with Kafka and Spark." },
+    { label: "Data & AI", text: "Complex SQL, tuning, validation and analysis; AI-driven products and initiatives at Partner." },
+    { label: "Business & Marketing", text: "Business Administration degree; eight years of marketing, brand and client management; founding Dream Bikinis." },
+    { label: "People", text: "Cross-department projects, client strategy sessions, teaching programming, and a Psychology degree." },
   ],
 };
 
@@ -261,47 +266,47 @@ export const roles: Role[] = [
     end: "Present",
     range: "11.2024 — now",
     summary:
-      "Hands-on ETL and BI development for billing, with ownership that continues past go-live: testing, releasing, monitoring and supporting what ships.",
+      "Hands-on ETL, BI and AI development for billing, with ownership that continues past go-live: testing, releasing, monitoring and supporting what ships.",
     groups: [
       {
         label: "Build",
         items: [
-          "Develop, maintain and improve ETL processes with Informatica PowerCenter.",
-          "Develop reports and dashboards with SAP BusinessObjects and Power BI.",
+          "Develop, maintain, test and enhance ETL processes with Informatica PowerCenter, Python and APIs.",
+          "Develop reports and dashboards with SAP BusinessObjects and Power BI (including DAX).",
           "Create and maintain tables, packages and stored procedures for the Billing department.",
-          "Write technical and functional specifications.",
+          "Write technical and functional specifications (FSD/TSD) from stakeholder requirements.",
         ],
       },
       {
         label: "Optimize",
         items: [
-          "Write complex SQL on Oracle and Microsoft SQL Server for extraction, validation, troubleshooting and analysis.",
-          "Tune SQL and ETL performance: analysis, bottleneck identification, and faster data loading and retrieval.",
+          "Write and edit complex SQL on Oracle and Microsoft SQL Server for extraction, validation, data and gap analysis, troubleshooting, and SQL tuning of query and ETL performance.",
         ],
       },
       {
-        label: "Run",
+        label: "Test & Run",
         items: [
-          "Test and validate new developments before production deployment.",
-          "Deploy releases to production and monitor stability after go-live.",
-          "Troubleshoot production issues and provide production support.",
+          "Write test documentation (STP, STD, STR) and test scenarios, and run functional, regression, sanity, data quality and performance/runtime tests.",
+          "Manage the release lifecycle with GIT and CI/CD pipelines: production deployments and post-go-live support.",
         ],
       },
       {
-        label: "Collaborate",
+        label: "Lead & Collaborate",
         items: [
-          "Work across development, architecture, QA, system analysis, infrastructure, BI, information security, DBA and business teams through the full SDLC.",
-          "Translate technical detail for non-technical leadership and lead end-to-end data and ETL projects.",
-          "Use generative AI tools to improve daily workflows and support AI-driven initiatives.",
+          "Lead end-to-end data/ETL projects in Agile and DWH environments, working with teams from multiple departments across the organization.",
+          "Develop AI-driven products and initiatives, and use generative AI to improve daily workflows.",
         ],
       },
     ],
     tech: [
       "Informatica PowerCenter",
+      "Python",
+      "APIs",
       "Oracle",
       "Microsoft SQL Server",
       "SAP BusinessObjects",
-      "Power BI",
+      "Power BI (DAX)",
+      "GIT / CI/CD",
       "Generative AI",
     ],
   },
@@ -319,7 +324,7 @@ export const roles: Role[] = [
         label: "Build",
         items: [
           "Create, optimize and maintain ETL processes with Informatica tools, including Informatica Developer.",
-          "Build pipelines with JSON and XML files, and HTTP and Java transformations.",
+          "Build pipelines with JSON, XML and Mainframe (COBOL) files, and HTTP and Java transformations.",
           "Create and maintain tables, views and stored procedures in Teradata.",
         ],
       },
@@ -350,25 +355,84 @@ export const roles: Role[] = [
       "Microsoft SQL Server",
       "Control-M",
       "JSON / XML",
+      "Mainframe (COBOL)",
       "Jenkins",
       "Jira",
     ],
   },
   {
+    id: "upper",
+    title: "Marketing Manager & Client Account Manager",
+    company: "Upper Group",
+    start: "2020",
+    end: "2023",
+    range: "2020 — 2023",
+    summary:
+      "Led marketing teams and a portfolio of client accounts — from strategy and SWOT sessions to campaign delivery and KPI optimization.",
+    groups: [
+      {
+        label: "Lead",
+        items: [
+          "Recruited, onboarded and managed teams of content writers, PPC specialists and SEO professionals.",
+          "Oversaw marketing operations, campaign budgets, stakeholder alignment and workflow to maximize ROI and client retention.",
+        ],
+      },
+      {
+        label: "Clients",
+        items: [
+          "Served as Client Account Manager, leading end-to-end client, brand and multi-channel marketing projects from roadmap to delivery.",
+          "Ran business strategy consultations: SWOT analysis, market research, competitor benchmarking and brand differentiation.",
+        ],
+      },
+    ],
+    tech: ["PPC", "SEO", "Content strategy", "Brand management", "SWOT analysis", "KPI optimization"],
+  },
+  {
     id: "progeeks",
     title: "Programming Teacher",
     company: "ProGeeks",
-    start: "2020",
-    end: "2022",
-    range: "2020 — 2022",
-    summary: "Taught programming in Java and in Python.",
+    start: "2021",
+    end: "2023",
+    range: "2021 — 2023",
+    summary: "Taught Java, Python and web development courses (JavaScript, HTML, CSS, React, Node.js).",
     groups: [
       {
         label: "Teach",
-        items: ["Taught Java programming.", "Taught Python programming."],
+        items: ["Taught Java.", "Taught Python.", "Taught web development."],
       },
     ],
-    tech: ["Java", "Python"],
+    tech: ["Java", "Python", "JavaScript", "HTML", "CSS", "React", "Node.js"],
+  },
+  {
+    id: "freelance",
+    title: "Brand & Digital Marketing Consultant",
+    company: "Self-Employed",
+    start: "2017",
+    end: "2023",
+    range: "2017 — 2023",
+    summary:
+      "Full-funnel digital marketing, websites and analytics for large, high-profile clients and diverse commercial businesses.",
+    groups: [
+      {
+        label: "Campaigns",
+        items: [
+          "Led full-funnel digital marketing strategies, performance marketing (PPC) and organic growth campaigns.",
+        ],
+      },
+      {
+        label: "Web & SEO",
+        items: [
+          "Ran business strategy consultations, built custom WordPress websites and landing pages (Elementor Pro), and executed technical and content SEO.",
+        ],
+      },
+      {
+        label: "Data",
+        items: [
+          "Analyzed cross-channel performance, designed A/B tests and built KPI dashboards to optimize conversion, ROI and engagement.",
+        ],
+      },
+    ],
+    tech: ["Google Ads", "Meta Ads", "SEO", "WordPress", "Elementor Pro", "Google Analytics", "A/B testing"],
   },
 ];
 
@@ -381,45 +445,56 @@ export type EarlierRole = {
 
 export const earlierRoles: EarlierRole[] = [
   {
-    title: "Founder & Owner",
+    title: "Founder, Designer & Brand Manager",
     company: "Dream Bikinis",
     range: "2017 — 2021",
     summary:
-      "Founded and ran Dream Bikinis, a successful independent swimwear brand, as a self-employed business owner.",
+      "Founded, designed and launched an independent swimwear brand from zero: brand identity, product design, go-to-market, e-commerce and social media.",
   },
   {
-    title: "Marketing Manager",
-    company: "upper.il",
-    range: "2020 — 2021",
+    title: "Digital Marketing & Account Manager",
+    company: "Social Lady",
+    range: "2017 — 2018",
     summary:
-      "Managed content writers, PPC and SEO specialists; coordinated marketing activity, budgets and workflow.",
+      "PPC and organic social campaigns for clients in Israel and the USA; SEO and brand strategy sessions; bilingual website content.",
   },
   {
-    title: "Digital Marketing Analyst",
-    company: "Freelance",
-    range: "2017 — 2021",
+    title: "Web & E-Commerce Project Manager",
+    company: "Razi Interactive",
+    range: "2016 — 2017",
     summary:
-      "Collected and analysed channel data, tracked KPIs, built reports and dashboards, and designed A/B tests for SEO, PPC and content.",
+      "Built and managed websites and e-commerce stores on WordPress and Shopify; digital strategy, content and SEO for clients.",
   },
   {
-    title: "Content Writer & Email Marketing",
-    company: "Freelance",
-    range: "2016 — 2021",
-    summary:
-      "Wrote content across many topics and planned content schedules to support SEO and engagement.",
+    title: "Digital Content Specialist",
+    company: "WebNoise",
+    range: "2015 — 2017",
+    summary: "Digital content and marketing copy aligned with each client’s brand voice and SEO best practices.",
+  },
+  {
+    title: "Digital Content Writer",
+    company: "Personas Media",
+    range: "2015 — 2017",
+    summary: "Engaging content across platforms, supporting brand storytelling and organic growth.",
+  },
+  {
+    title: "Digital Content & SEO Strategist",
+    company: "DigiTouch",
+    range: "2015 — 2016",
+    summary: "Website content, SEO and link building, WordPress websites and marketing analysis for clients in diverse industries.",
   },
 ];
 
 /** Agencies and companies Katya worked with on the marketing side (from Katya). */
-export const marketingPartners = ["Persons Media", "Webnoise", "SEO Link", "Digitouch", "Razi Interactive"];
+export const marketingPartners = ["Upper Group", "Social Lady", "DigiTouch", "Razi Interactive", "WebNoise", "Personas Media", "SEO Link"];
 
 export const earlierSkills = [
-  "KPI analysis & reporting",
-  "Data-informed decisions",
-  "A/B testing",
-  "SEO & PPC analytics",
-  "Google Analytics",
-  "Cross-functional coordination",
+  "PPC (Google & Meta Ads)",
+  "SEO & link building",
+  "Brand strategy",
+  "Client & account management",
+  "KPI analysis & A/B testing",
+  "Google Analytics & Tag Manager",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -437,8 +512,12 @@ export const skillCategories: SkillCategory[] = [
       { name: "Informatica PowerCenter", evidence: ["partner"] },
       { name: "Informatica Developer", evidence: ["isracard"] },
       { name: "ETL pipelines", evidence: ["partner", "isracard"] },
+      { name: "APIs", evidence: ["partner"] },
       { name: "Data warehouse environments", evidence: ["isracard"] },
       { name: "Control-M", evidence: ["isracard"] },
+      { name: "Mainframe (COBOL) files", evidence: ["isracard"] },
+      { name: "Snowflake", evidence: ["toolkit"] },
+      { name: "Apache Airflow", evidence: ["toolkit"] },
     ],
   },
   {
@@ -448,19 +527,38 @@ export const skillCategories: SkillCategory[] = [
       { name: "Oracle", evidence: ["partner", "isracard"] },
       { name: "Microsoft SQL Server", evidence: ["partner", "isracard"] },
       { name: "Teradata", evidence: ["isracard"] },
+      { name: "PostgreSQL", evidence: ["project"] },
       { name: "Complex SQL queries", evidence: ["partner", "isracard", "studies"] },
       { name: "Stored procedures", evidence: ["partner", "isracard"] },
       { name: "SQL performance tuning", evidence: ["partner"] },
+      { name: "Toad", evidence: ["toolkit"] },
     ],
   },
   {
     id: "bi",
     label: "BI & Reporting",
     skills: [
-      { name: "Power BI", evidence: ["partner"] },
+      { name: "Power BI (DAX)", evidence: ["partner"] },
       { name: "SAP BusinessObjects", evidence: ["partner"] },
       { name: "Tableau", evidence: ["toolkit"] },
       { name: "Reporting & dashboards", evidence: ["partner", "marketing"] },
+    ],
+  },
+  {
+    id: "cloud",
+    label: "Cloud, Streaming & Big Data",
+    skills: [
+      { name: "Apache Kafka", evidence: ["project"] },
+      { name: "Apache Spark (PySpark)", evidence: ["project"] },
+      { name: "S3 data lake (Parquet)", evidence: ["project"] },
+      { name: "Docker & Docker Compose", evidence: ["project"] },
+      { name: "FastAPI", evidence: ["project"] },
+      { name: "CI/CD", evidence: ["partner", "project"] },
+      { name: "AWS", evidence: ["toolkit"] },
+      { name: "Microsoft Azure", evidence: ["toolkit"] },
+      { name: "Google Cloud (GCP)", evidence: ["toolkit"] },
+      { name: "Kubernetes", evidence: ["toolkit"] },
+      { name: "Linux", evidence: ["toolkit"] },
     ],
   },
   {
@@ -468,36 +566,63 @@ export const skillCategories: SkillCategory[] = [
     label: "Programming",
     skills: [
       { name: "SQL", evidence: ["partner", "isracard", "studies"] },
+      { name: "Python", evidence: ["partner", "progeeks", "project"] },
       { name: "Java", evidence: ["isracard", "progeeks", "studies"] },
-      { name: "Python", evidence: ["progeeks"] },
-      { name: "C", evidence: ["toolkit"] },
-      { name: "JavaScript", evidence: ["toolkit"] },
-      { name: "HTML", evidence: ["toolkit"] },
-      { name: "CSS", evidence: ["toolkit"] },
+      { name: "JavaScript", evidence: ["progeeks"] },
+      { name: "React", evidence: ["progeeks"] },
+      { name: "Node.js", evidence: ["progeeks"] },
+      { name: "HTML", evidence: ["progeeks"] },
+      { name: "CSS", evidence: ["progeeks"] },
+      { name: "C", evidence: ["studies"] },
     ],
   },
   {
     id: "ai",
-    label: "AI & Developer Productivity",
+    label: "AI & Automation",
     skills: [
       { name: "Generative AI", evidence: ["partner"] },
+      { name: "AI product development", evidence: ["partner"] },
+      { name: "LLMs", evidence: ["toolkit"] },
+      { name: "RAG", evidence: ["toolkit"] },
+      { name: "MCP (Model Context Protocol)", evidence: ["toolkit"] },
+      { name: "Hallucination detection & mitigation", evidence: ["toolkit"] },
+      { name: "AI agents", evidence: ["toolkit"] },
+      { name: "LangChain", evidence: ["toolkit"] },
       { name: "Prompt engineering", evidence: ["toolkit"] },
       { name: "ChatGPT", evidence: ["toolkit"] },
+      { name: "Claude & Claude Code", evidence: ["toolkit", "project"] },
       { name: "Copilot", evidence: ["toolkit"] },
-      { name: "Claude Code", evidence: ["toolkit"] },
-      { name: "AI integration", evidence: ["toolkit"] },
+    ],
+  },
+  {
+    id: "marketing",
+    label: "Marketing, Brand & Project Management",
+    skills: [
+      { name: "End-to-end project management", evidence: ["partner", "marketing"] },
+      { name: "Brand management & positioning", evidence: ["marketing"] },
+      { name: "Client & account management", evidence: ["marketing"] },
+      { name: "Go-to-market strategy", evidence: ["marketing"] },
+      { name: "PPC (Google Ads, Meta)", evidence: ["marketing"] },
+      { name: "SEO & link building", evidence: ["marketing"] },
+      { name: "Content strategy", evidence: ["marketing"] },
+      { name: "CRO & A/B testing", evidence: ["marketing"] },
+      { name: "Google Analytics (GA4)", evidence: ["marketing"] },
+      { name: "Google Tag Manager", evidence: ["marketing"] },
+      { name: "Ahrefs, SEMrush, Screaming Frog", evidence: ["marketing"] },
+      { name: "WordPress, Shopify, Elementor Pro", evidence: ["marketing"] },
     ],
   },
   {
     id: "workflow",
     label: "Engineering Workflow",
     skills: [
+      { name: "QA & test documentation (STP, STD, STR)", evidence: ["partner"] },
+      { name: "GIT", evidence: ["partner", "project"] },
       { name: "Jenkins", evidence: ["isracard"] },
       { name: "Jira", evidence: ["isracard"] },
-      { name: "Testing & validation", evidence: ["partner"] },
       { name: "Production support", evidence: ["partner", "isracard"] },
       { name: "Technical documentation", evidence: ["partner", "isracard"] },
-      { name: "Cross-functional delivery", evidence: ["partner", "isracard"] },
+      { name: "Cross-functional delivery", evidence: ["partner", "isracard", "marketing"] },
     ],
   },
 ];
@@ -511,13 +636,13 @@ export const degrees = [
     degree: "B.A. Computer Science & Business Administration",
     school: "The Open University",
     range: "2020 — 2024",
-    gpa: "87",
+    gpa: "85",
   },
   {
     degree: "B.A. Psychology",
     school: "The Open University",
     range: "2019 — 2025",
-    gpa: "86",
+    gpa: "87",
   },
 ];
 
@@ -532,7 +657,7 @@ export const courses = [
 
 export const training = [
   { name: "ETL Informatica course", provider: "Aman Group" },
-  { name: "Internet Marketing and Advertising course", provider: "HackerU College, 2016" },
+  { name: "Digital Marketing and Advertising course", provider: "HackerU College, 2015" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -564,6 +689,18 @@ export const highlights = [
     text: "Shift-based support for Informatica and Control-M failures, release deployment, and post-go-live monitoring of process stability.",
     tags: ["Control-M", "Production support"],
   },
+  {
+    title: "Quality before release",
+    context: "Partner",
+    text: "Test plans, designs and reports (STP, STD, STR), with functional, regression, sanity, data quality and runtime tests before anything reaches production.",
+    tags: ["QA", "Regression", "Data quality"],
+  },
+  {
+    title: "Growing brands and client portfolios",
+    context: "Upper Group · Self-Employed",
+    text: "Marketing teams, client accounts and full-funnel campaigns — strategy sessions, PPC, SEO, websites and KPI dashboards for clients in Israel and abroad.",
+    tags: ["Brand", "PPC", "SEO", "Client management"],
+  },
 ];
 
 export type Project = {
@@ -593,6 +730,20 @@ export type Project = {
  * }
  */
 export const projects: Project[] = [
+  {
+    slug: "adpulse",
+    title: "AdPulse",
+    year: "2026",
+    summary:
+      "A real-time ad-tech analytics platform: synthetic ad events stream through Kafka, are processed by Spark Structured Streaming, land in an S3-compatible data lake and PostgreSQL, and are served by FastAPI to a Streamlit dashboard. Everything runs with one docker compose up.",
+    points: [
+      "Validation, deduplication, watermarks and 1-minute event-time windows, with a dead-letter topic for bad data",
+      "Click-fraud detection and publisher rankings with Spark window functions",
+      "Unit, PySpark and end-to-end integration tests",
+    ],
+    stack: ["Apache Kafka", "PySpark", "S3 / Parquet", "PostgreSQL", "FastAPI", "Streamlit", "Docker", "pytest"],
+    links: [{ label: "Code on GitHub", href: "https://github.com/katya-alferov/AdPulse" }],
+  },
   {
     slug: "petalport",
     title: "Petalport",
@@ -626,7 +777,7 @@ export const navigation = [
 ];
 
 export const site = {
-  title: "Katya Alferov — ETL & BI Developer",
+  title: "Katya Alferov — ETL, BI & Data Developer | Marketing, Brand & Project Manager",
   description:
-    "Katya Alferov is a data professional in Israel working across ETL development, SQL, BI and enterprise data systems — Informatica, Oracle, SQL Server, Teradata, Power BI and SAP BusinessObjects.",
+    "Katya Alferov is an ETL, BI & Data Developer and a Senior Marketing, Brand & Project Manager in Israel — Informatica, SQL, Python, Power BI and AI-driven products at Partner, plus eight years of digital marketing, brand and client management.",
 };

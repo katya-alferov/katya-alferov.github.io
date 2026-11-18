@@ -9,7 +9,7 @@ import {
   type Skill,
 } from "@/content/profile";
 
-const filters: (Evidence | "all")[] = ["all", "partner", "isracard", "progeeks", "studies", "toolkit"];
+const filters: (Evidence | "all")[] = ["all", "partner", "isracard", "marketing", "progeeks", "project", "studies", "toolkit"];
 
 function isProfessional(skill: Skill) {
   return skill.evidence.some((e) => professionalEvidence.includes(e));
