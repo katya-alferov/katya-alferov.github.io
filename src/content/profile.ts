@@ -76,7 +76,7 @@ export const hero = {
   eyebrow: ["ETL & BI", "Data Engineering", "Applied AI", "Marketing & Brand"],
   headline: { lead: "Turning complex data", accent: "into clarity." },
   intro:
-    "Hi, I’m Katya Alferov — an ETL, BI & Data Developer and a Senior Marketing, Brand & Project Manager. At Partner I build ETL processes, BI reporting and AI-driven products; before data, I spent eight years leading digital marketing, brand and client projects. I love the point where data, AI, development and marketing meet.",
+    "Hi, I’m Katya Alferov — an ETL, BI & Data Developer and a Senior Marketing, Brand & Project Manager. At Partner I build ETL processes, BI reporting and AI-driven products; before data, I spent 7+ years leading digital marketing, brand and client projects. I love the point where data, AI, development and marketing meet.",
   primaryCta: { label: "Explore my work", href: "#experience" },
   secondaryCta: { label: "Get in touch", href: "#contact" },
 };
@@ -225,13 +225,13 @@ export const story = {
   paragraphs: [
     "I work where data systems meet the business. On the billing team at Partner, I build and maintain the ETL processes, database objects, reports and AI-driven initiatives that billing data depends on — from the specification, through QA and release, to supporting it in production.",
     "Before that, at Isracard, I developed ETL processes with Informatica in a data warehouse environment, worked across Teradata, Oracle and SQL Server, and was part of the shift-based support for Informatica and Control-M failures.",
-    "Before data, I spent eight years in marketing: as Marketing Manager and Client Account Manager at Upper Group, as a brand and digital marketing consultant for large clients, at agencies such as Social Lady, DigiTouch and Razi Interactive, and as the founder of my own swimwear brand, Dream Bikinis. I led PPC and SEO campaigns, brand strategy and client portfolios in Israel and the USA.",
+    "Before data, I spent 7+ years in marketing: as Marketing Manager and Client Account Manager at Upper Group, as a brand and digital marketing consultant for large clients, at agencies such as Social Lady, DigiTouch and Razi Interactive, and as the founder of my own swimwear brand, Dream Bikinis. I led PPC and SEO campaigns, brand strategy and client portfolios in Israel and the USA.",
     "I also taught Java, Python and web development at ProGeeks, and I hold two B.A. degrees from The Open University: Computer Science & Business Administration, and Psychology.",
   ],
   threads: [
     { label: "Systems", text: "Computer Science degree; ETL development across Informatica, Control-M and three database platforms; streaming with Kafka and Spark." },
     { label: "Data & AI", text: "Complex SQL, tuning, validation and analysis; AI-driven products and initiatives at Partner." },
-    { label: "Business & Marketing", text: "Business Administration degree; eight years of marketing, brand and client management; founding Dream Bikinis." },
+    { label: "Business & Marketing", text: "Business Administration degree; 7+ years of marketing, brand and client management; founding Dream Bikinis." },
     { label: "People", text: "Cross-department projects, client strategy sessions, teaching programming, and a Psychology degree." },
   ],
 };
@@ -779,5 +779,5 @@ export const navigation = [
 export const site = {
   title: "Katya Alferov — ETL, BI & Data Developer | Marketing, Brand & Project Manager",
   description:
-    "Katya Alferov is an ETL, BI & Data Developer and a Senior Marketing, Brand & Project Manager in Israel — Informatica, SQL, Python, Power BI and AI-driven products at Partner, plus eight years of digital marketing, brand and client management.",
+    "Katya Alferov is an ETL, BI & Data Developer and a Senior Marketing, Brand & Project Manager in Israel — Informatica, SQL, Python, Power BI and AI-driven products at Partner, plus 7+ years of digital marketing, brand and client management.",
 };

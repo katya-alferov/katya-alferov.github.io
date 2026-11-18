@@ -13,7 +13,7 @@ export function Experience() {
           id="experience-title"
           aside={
             <p className="max-w-[60ch] text-[1.0625rem] leading-relaxed text-paper-dim">
-              Data engineering at Partner and Isracard, and eight years leading marketing, brand and client
+              Data engineering at Partner and Isracard, and 7+ years leading marketing, brand and client
               projects — two sides of the same skill: turning business needs into results.
             </p>
           }
