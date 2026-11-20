@@ -731,18 +731,19 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
-    // TODO(Katya): replace with the real client name, scope, channels, visuals and results.
-    slug: "bat-yam-laser-campaign",
-    title: "Advertising campaign for a laser company in Bat Yam",
+    // TODO(Katya): add what was produced, channels, visuals and results.
+    slug: "tami-lazer-ad",
+    title: "Tami Lazer: commercial ad",
     year: "2026",
     summary:
-      "A local advertising campaign for a laser company in Bat Yam, Israel: from the campaign idea and messaging to the creative and the media plan aimed at customers in Bat Yam and the surrounding area.",
+      "A commercial ad for digital media for Tami Lazer, a laser company in Bat Yam, Israel: from the idea and the message to the finished creative, made for the platforms where the company's local customers spend their time.",
     points: [
-      "Campaign concept, messaging and ad copy",
-      "Creative for digital and social channels",
-      "Local targeting and performance tracking",
+      "Concept, messaging and script",
+      "Creative produced for digital and social media",
+      "Aimed at customers in Bat Yam and the surrounding area",
     ],
-    stack: ["Campaign strategy", "Copywriting", "Creative", "Paid social", "Local marketing"],
+    stack: ["Advertising", "Copywriting", "Creative", "Digital media", "Local marketing"],
+    links: [{ label: "Project on GitHub", href: "https://github.com/katya-alferov/TamiLazer-ad" }],
   },
   {
     slug: "adpulse",
