@@ -34,7 +34,7 @@ export function SiteHeader() {
           <Mark />
           <span className="flex flex-col leading-none">
             <span className="text-[0.95rem] font-medium tracking-tight text-paper">{person.name}</span>
-            <span className="mono-label mt-1 text-muted">{person.role}</span>
+            <span className="mono-label mt-1 hidden text-muted sm:block">{person.role}</span>
             <span className="sr-only">, back to top</span>
           </span>
         </a>
