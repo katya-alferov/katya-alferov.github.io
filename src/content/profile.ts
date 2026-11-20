@@ -715,7 +715,7 @@ export type Project = {
 };
 
 /**
- * Personal projects. Empty until real, verifiable projects are published.
+ * Personal and client projects.
  * Add an entry here and it appears in the "Project index" automatically.
  *
  * Example:
@@ -730,6 +730,20 @@ export type Project = {
  * }
  */
 export const projects: Project[] = [
+  {
+    // TODO(Katya): replace with the real client name, scope, channels, visuals and results.
+    slug: "bat-yam-laser-campaign",
+    title: "Advertising campaign for a laser company in Bat Yam",
+    year: "2026",
+    summary:
+      "A local advertising campaign for a laser company in Bat Yam, Israel: from the campaign idea and messaging to the creative and the media plan aimed at customers in Bat Yam and the surrounding area.",
+    points: [
+      "Campaign concept, messaging and ad copy",
+      "Creative for digital and social channels",
+      "Local targeting and performance tracking",
+    ],
+    stack: ["Campaign strategy", "Copywriting", "Creative", "Paid social", "Local marketing"],
+  },
   {
     slug: "adpulse",
     title: "AdPulse",

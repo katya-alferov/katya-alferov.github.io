@@ -35,14 +35,14 @@ export function Work() {
           </ul>
         </div>
 
-        {/* B — personal projects */}
+        {/* B — personal and client projects */}
         <div className="mt-20 grid grid-cols-12 gap-x-6 gap-y-6 lg:mt-28">
           <div className="col-span-12 lg:col-span-3">
             <h3 className="mono-label text-paper-dim">
               <span className="text-lime">B</span> — Project index
             </h3>
             <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted">
-              Personal projects, published with source and a short write-up.
+              Personal and client projects, each with a short write-up.
             </p>
           </div>
           <div className="col-span-12 lg:col-span-9">

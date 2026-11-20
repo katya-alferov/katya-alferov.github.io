@@ -23,7 +23,7 @@ export function SectionHeader({
       </p>
       <h2
         id={id}
-        className="col-span-12 max-w-[22ch] font-display text-[clamp(2.25rem,5vw,4.25rem)] leading-[1.02] tracking-[-0.025em] text-paper lg:col-span-9"
+        className="col-span-12 max-w-[22ch] font-display text-[clamp(1.85rem,4.2vw,3.6rem)] leading-[1.05] tracking-[-0.03em] text-paper lg:col-span-9"
       >
         {children}
       </h2>

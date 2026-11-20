@@ -6,29 +6,23 @@ import { themeScript } from "@/components/ui/ThemeToggle";
 import "./globals.css";
 
 /* Open-source (OFL) fonts, self-hosted from src/fonts — no external requests. */
-const newsreader = localFont({
-  variable: "--font-newsreader",
-  src: [
-    { path: "../fonts/newsreader-latin-opsz-normal.woff2", weight: "200 800", style: "normal" },
-    { path: "../fonts/newsreader-latin-wght-italic.woff2", weight: "200 800", style: "italic" },
-  ],
-  display: "swap",
-  fallback: ["Times New Roman", "serif"],
-});
-
-const instrumentSans = localFont({
-  variable: "--font-instrument",
-  src: [{ path: "../fonts/instrument-sans-latin-wght-normal.woff2", weight: "400 700", style: "normal" }],
+const unbounded = localFont({
+  variable: "--font-unbounded",
+  src: [{ path: "../fonts/unbounded-latin-wght-normal.woff2", weight: "200 900", style: "normal" }],
   display: "swap",
   fallback: ["system-ui", "sans-serif"],
 });
 
-const plexMono = localFont({
-  variable: "--font-plex-mono",
-  src: [
-    { path: "../fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" },
-  ],
+const schibsted = localFont({
+  variable: "--font-schibsted",
+  src: [{ path: "../fonts/schibsted-grotesk-latin-wght-normal.woff2", weight: "400 900", style: "normal" }],
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+});
+
+const martianMono = localFont({
+  variable: "--font-martian-mono",
+  src: [{ path: "../fonts/martian-mono-latin-wght-normal.woff2", weight: "100 800", style: "normal" }],
   display: "swap",
   fallback: ["ui-monospace", "monospace"],
 });
@@ -92,7 +86,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f100e",
+  themeColor: "#0c0e26",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -100,7 +94,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${newsreader.variable} ${instrumentSans.variable} ${plexMono.variable} antialiased`}
+      className={`${unbounded.variable} ${schibsted.variable} ${martianMono.variable} antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

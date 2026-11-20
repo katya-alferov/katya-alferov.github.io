@@ -13,9 +13,9 @@ export function Contact() {
         </p>
         <h2
           id="contact-title"
-          className="mt-6 max-w-[14ch] font-display text-[clamp(2.75rem,8vw,7.5rem)] leading-[0.95] tracking-[-0.035em] text-paper"
+          className="mt-6 max-w-[14ch] font-display text-[clamp(2.25rem,6.5vw,6.25rem)] leading-[1] tracking-[-0.04em] text-paper"
         >
-          Have a data challenge <span className="italic">in mind</span>
+          Have a data challenge <span className="text-lime">in mind</span>
           <span className="ml-[0.06em] text-lime">?</span>
         </h2>
 

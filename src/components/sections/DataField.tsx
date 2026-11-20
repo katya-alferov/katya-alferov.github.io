@@ -39,9 +39,9 @@ export function DataField() {
     function readColors() {
       const css = getComputedStyle(document.documentElement);
       return {
-        dot: css.getPropertyValue("--color-muted").trim() || "#8f8b81",
-        lane: css.getPropertyValue("--color-line").trim() || "#2a2b26",
-        accent: css.getPropertyValue("--color-lime").trim() || "#d4f54a",
+        dot: css.getPropertyValue("--color-muted").trim() || "#8b8ab3",
+        lane: css.getPropertyValue("--color-line").trim() || "#262a55",
+        accent: css.getPropertyValue("--color-lime").trim() || "#b6a3ff",
       };
     }
 

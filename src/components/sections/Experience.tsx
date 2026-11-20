@@ -58,7 +58,7 @@ function RoleEntry({ role, current }: { role: Role; current: boolean }) {
           {role.title}
           <span className="sr-only"> at {role.company}</span>
         </h3>
-        <p className="mt-3 max-w-[60ch] font-display text-[1.375rem] leading-snug text-paper-dim italic">
+        <p className="mt-3 max-w-[60ch] font-display text-[1.375rem] leading-snug text-paper-dim">
           {role.summary}
         </p>
 

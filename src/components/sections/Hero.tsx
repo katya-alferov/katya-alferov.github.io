@@ -32,14 +32,14 @@ export function Hero() {
 
         <h1
           id="hero-title"
-          className="mt-5 font-display text-[clamp(2.75rem,7.6vw,7.5rem)] leading-[0.94] font-normal tracking-[-0.035em] text-paper"
+          className="mt-5 font-display text-[clamp(2.1rem,6.2vw,6.25rem)] leading-[1] font-normal tracking-[-0.04em] text-paper"
         >
           <span className="sm:block">
             {hero.headline.lead}
           </span>{" "}
-          <span className="inline-block italic sm:block sm:pl-[12%] lg:pl-[24%]">
+          <span className="inline-block text-lime sm:block sm:pl-[12%] lg:pl-[24%]">
             {hero.headline.accent.replace(/\.$/, "")}
-            <span className="text-lime not-italic">.</span>
+            <span className="text-paper">.</span>
           </span>
         </h1>
 

@@ -16,8 +16,8 @@ export default function NotFound() {
       <main id="main" className="flex min-h-dvh items-center py-24">
         <Container>
           <p className="mono-label text-lime">Error 404 · reject_log</p>
-          <h1 className="mt-6 max-w-[16ch] font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.95] tracking-[-0.035em] text-paper">
-            This row failed <span className="italic">validation</span>
+          <h1 className="mt-6 max-w-[16ch] font-display text-[clamp(2.25rem,6.5vw,5.75rem)] leading-[0.95] tracking-[-0.035em] text-paper">
+            This row failed <span className="text-lime">validation</span>
             <span className="text-lime">.</span>
           </h1>
           <div className="mt-10 max-w-xl border-y border-line py-4 font-mono text-xs text-paper-dim">
